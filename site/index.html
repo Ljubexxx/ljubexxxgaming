@@ -3,97 +3,95 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#050506" />
-  <meta name="description" content="LjubeXXX Gaming — official streaming hub, schedule, games and social links." />
+  <meta name="theme-color" content="#050507" />
+  <meta name="description" content="LjubeXXX Gaming — streaming hub, schedule, games, and social links." />
   <title>LjubeXXX Gaming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="ambient ambient-left" aria-hidden="true"></div>
-  <div class="ambient ambient-right" aria-hidden="true"></div>
+  <div class="site-bg"></div>
 
   <header class="site-header" id="home">
-    <a class="brand" href="#home" aria-label="LjubeXXX Gaming home">
-      <img src="assets/brand.webp" alt="LjubeXXX Gaming" />
-    </a>
+    <div class="brand-wrap panel panel-soft">
+      <p class="eyebrow">STREAM • GAME • COMMUNITY</p>
+      <h1 class="brand-title">LJUBEXXX</h1>
+      <div class="brand-subtitle">GAMING</div>
+    </div>
 
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
-      <span></span><span></span><span></span>
-      <b>MENU</b>
-    </button>
-
-    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-      <a class="active" href="#home">HOME</a>
+    <nav class="main-nav panel panel-soft" aria-label="Main navigation">
+      <a href="#home" class="active">HOME</a>
       <a href="#about">ABOUT ME</a>
       <a href="#schedule">SCHEDULE</a>
       <a href="#games">GAMES</a>
-      <a href="#currently">SETUP</a>
+      <a href="#playing">SETUP</a>
       <a href="#socials">CONTACT</a>
     </nav>
   </header>
 
   <main class="page-shell">
-    <aside class="social-column social-left" id="socialsLeft" aria-label="Streaming and social links"></aside>
+    <div class="layout-grid">
+      <aside class="social-column left" id="leftSocials" aria-label="Left social links"></aside>
 
-    <section class="content-column">
-      <section class="hero-shell" id="games" aria-label="Featured games">
-        <button class="hero-arrow hero-arrow-left" id="prevGame" type="button" aria-label="Previous featured game">‹</button>
+      <section class="center-column">
+        <section class="games-shell panel" id="games">
+          <button class="carousel-arrow left" id="desktopPrev" type="button" aria-label="Show previous game">‹</button>
+          <div class="games-grid" id="desktopGames"></div>
+          <button class="carousel-arrow right" id="desktopNext" type="button" aria-label="Show next game">›</button>
 
-        <div class="game-stage">
-          <div class="game-grid" id="gameGrid"></div>
-          <div class="core-badge" aria-label="LjubeXXX Gaming">
+          <div class="core-badge" aria-hidden="true">
             <div class="core-ring"></div>
             <div class="core-inner">
-              <span class="core-mark">L</span>
-              <strong>LJUBEXXX</strong>
-              <em>GAMING</em>
+              <div class="core-mark">Lj</div>
+              <div class="core-brand">LJUBEXXX<br><span>GAMING</span></div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <button class="hero-arrow hero-arrow-right" id="nextGame" type="button" aria-label="Next featured game">›</button>
+        <section class="live-bar panel panel-soft" aria-label="Live banner">
+          <span class="live-dot">●</span>
+          <strong>LIVE NOW</strong>
+          <span class="divider"></span>
+          <span id="liveTagline">COME JOIN THE STREAM!</span>
+        </section>
+
+        <section class="content-grid">
+          <article class="info-card panel" id="about">
+            <header><span class="card-kicker">ABOUT ME</span></header>
+            <div class="about-body">
+              <div class="about-badge brand-font">Lj</div>
+              <p id="aboutText"></p>
+            </div>
+          </article>
+
+          <article class="info-card panel" id="schedule">
+            <header><span class="card-kicker">STREAM SCHEDULE</span></header>
+            <div class="schedule-list" id="scheduleList"></div>
+            <p class="meta-line">TIMES ARE (CET / BELGRADE)</p>
+          </article>
+
+          <article class="info-card panel" id="playing">
+            <header><span class="card-kicker">CURRENTLY PLAYING</span></header>
+            <div class="playing-body">
+              <div class="playing-icon">◧</div>
+              <div>
+                <strong class="playing-title" id="playingTitle"></strong>
+                <p id="playingGenres"></p>
+              </div>
+            </div>
+          </article>
+        </section>
       </section>
 
-      <section class="live-bar" id="liveBar" aria-live="polite">
-        <div class="live-state"><i></i><strong id="liveLabel">LIVE NOW</strong></div>
-        <span class="live-divider"></span>
-        <b id="liveTagline">COME JOIN THE STREAM!</b>
-      </section>
-
-      <section class="info-grid">
-        <article class="info-card about-card" id="about">
-          <div class="panel-title"><span class="title-icon person-icon"></span><h2>ABOUT ME</h2></div>
-          <div class="about-content">
-            <div class="hoodie-art" aria-hidden="true"><span>LX</span></div>
-            <p id="aboutText"></p>
-          </div>
-        </article>
-
-        <article class="info-card schedule-card" id="schedule">
-          <div class="panel-title"><span class="title-icon calendar-icon"></span><h2>STREAM SCHEDULE</h2></div>
-          <div class="schedule-list" id="scheduleList"></div>
-          <small>TIMES ARE (CET / BELGRADE)</small>
-        </article>
-
-        <article class="info-card playing-card" id="currently">
-          <div class="panel-title"><span class="title-icon controller-icon"></span><h2>CURRENTLY PLAYING</h2></div>
-          <div class="playing-content">
-            <div class="controller-art" aria-hidden="true"><span>+</span><i></i><i></i></div>
-            <div><strong id="currentGame"></strong><span class="red-stroke"></span><p id="genres"></p></div>
-          </div>
-        </article>
-      </section>
-    </section>
-
-    <aside class="social-column social-right" id="socialsRight" aria-label="Community and social links"></aside>
+      <aside class="social-column right" id="rightSocials" aria-label="Right social links"></aside>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <span></span><p>© <b id="year"></b> LJUBEXXX GAMING. ALL RIGHTS RESERVED.</p><span></span>
+  <footer class="site-footer panel panel-soft">
+    <span>© <span id="year"></span> LJUBEXXX GAMING. ALL RIGHTS RESERVED.</span>
   </footer>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="config.js"></script>
   <script src="script.js"></script>
