@@ -2,12 +2,12 @@ window.LJUBE_CONFIG = {
   brand: {
     name: 'LJUBEXXX',
     suffix: 'GAMING',
-    tagline: 'COME JOIN THE STREAM!'
+    tagline: 'SEDI, UZIVAJ, KOMUNICIRAJ — KRECE SHOW!'
   },
   about:
-    "Yo! I'm LjubeXXX, a passionate gamer and content creator. I stream a variety of games and love interacting with the community. Join the family and let's have fun!",
-  currentlyPlaying: 'VARIETY GAMES',
-  genres: 'FPS / ACTION / STORY GAMES',
+    'Rekreativno se bavim igranjem, pa sam tu da vas zabavim i da se svi smejemo i sprdamo. Zato sedi, uzivaj, komuniciraj i krece show!',
+  setupTitle: 'PC SETUP SOON',
+  setupText: 'Ovde cemo uskoro ubaciti moje specifikacije racunara, periferije i sve ostalo sto koristim za stream i gaming.',
   socials: {
     twitch: { label: 'Twitch', eyebrow: 'FOLLOW ME ON', cta: 'WATCH LIVE', url: 'https://www.twitch.tv/ljubisa_vacli', enabled: true, accent: '#a970ff', icon: 'T' },
     youtube: { label: 'YouTube', eyebrow: 'SUBSCRIBE ON', cta: 'SUBSCRIBE', url: 'https://www.youtube.com/@Ljubexxx', enabled: true, accent: '#ff2d45', icon: '▶' },

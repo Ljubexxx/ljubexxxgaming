@@ -33,15 +33,14 @@
   `).join('');
 
   document.getElementById('aboutText').textContent = cfg.about;
-  document.getElementById('playingTitle').textContent = cfg.currentlyPlaying;
-  document.getElementById('playingGenres').textContent = cfg.genres;
+  document.getElementById('playingTitle').textContent = cfg.setupTitle;
+  document.getElementById('playingGenres').textContent = cfg.setupText;
   document.getElementById('scheduleList').innerHTML = cfg.schedule.map(row => `
     <div class="schedule-row"><strong>${row.day}</strong><time>${row.start} - ${row.end}</time></div>
   `).join('');
   document.getElementById('liveTagline').textContent = cfg.brand.tagline;
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Desktop arrow buttons: smooth scroll on smaller layouts where the games row becomes horizontal.
   const gamesGrid = document.getElementById('desktopGames');
   const scrollAmount = 220;
   document.getElementById('desktopPrev')?.addEventListener('click', () => {
