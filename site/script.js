@@ -19,8 +19,15 @@
       </${tag}>`;
   };
 
-  document.getElementById('leftSocials').innerHTML = socialOrderLeft.map(makeSocialCard).join('');
-  document.getElementById('rightSocials').innerHTML = socialOrderRight.map(makeSocialCard).join('');
+  const sponsorSlot = () => `
+    <article class="sponsor-slot panel">
+      <div class="sponsor-kicker">PARTNER SPACE</div>
+      <div class="sponsor-title">FUTURE SPONSOR</div>
+      <div class="sponsor-note">Za brendove koji veruju u ovu pricu.</div>
+    </article>`;
+
+  document.getElementById('leftSocials').innerHTML = socialOrderLeft.map(makeSocialCard).join('') + sponsorSlot();
+  document.getElementById('rightSocials').innerHTML = socialOrderRight.map(makeSocialCard).join('') + sponsorSlot();
 
   document.getElementById('desktopGames').innerHTML = cfg.games.map(game => `
     <article class="game-card" style="--img-pos:${game.position}">
