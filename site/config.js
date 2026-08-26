@@ -2,12 +2,12 @@ window.LJUBE_CONFIG = {
   brand: {
     name: 'LJUBEXXX',
     suffix: 'GAMING',
-    tagline: 'SIT BACK, ENJOY, CHAT — THE SHOW STARTS NOW!'
+    tagline: "SIT BACK, ENJOY, CHAT — THE SHOW STARTS NOW!"
   },
   about:
-    'I play games recreationally, and I'm here to entertain you so we can laugh, have fun, and enjoy the stream together. So sit back, enjoy, join the chat, and let the show begin!',
+    "I play games recreationally, and I’m here to entertain you so we can laugh, joke around, and enjoy the stream together. So sit back, enjoy, join the chat, and let the show begin!",
   setupTitle: 'PC SETUP SOON',
-  setupText: 'I'll be adding my PC specs, peripherals, and everything else I use for streaming and gaming here very soon.',
+  setupText: "I’ll be adding my PC specs, peripherals, and everything else I use for streaming and gaming here very soon.",
   socials: {
     twitch: { label: 'Twitch', eyebrow: 'FOLLOW ME ON', cta: 'WATCH LIVE', url: 'https://www.twitch.tv/ljubisa_vacli', enabled: true, accent: '#a970ff', icon: 'T' },
     youtube: { label: 'YouTube', eyebrow: 'SUBSCRIBE ON', cta: 'SUBSCRIBE', url: 'https://www.youtube.com/@Ljubexxx', enabled: true, accent: '#ff2d45', icon: '▶' },
