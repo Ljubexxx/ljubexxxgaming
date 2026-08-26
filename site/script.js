@@ -23,7 +23,7 @@
     <article class="sponsor-slot panel">
       <div class="sponsor-kicker">PARTNER SPACE</div>
       <div class="sponsor-title">FUTURE SPONSOR</div>
-      <div class="sponsor-note">Za brendove koji veruju u ovu pricu.</div>
+      <div class="sponsor-note">For brands that believe in this story.</div>
     </article>`;
 
   document.getElementById('leftSocials').innerHTML = socialOrderLeft.map(makeSocialCard).join('') + sponsorSlot();
