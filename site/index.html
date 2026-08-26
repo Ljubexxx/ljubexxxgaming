@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#030303" />
+  <meta name="description" content="LjubeXXX Gaming — streaming hub, schedule, games and social links." />
+  <title>LjubeXXX Gaming</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- DESKTOP: pixel-faithful skin based on the approved mockup -->
+  <main class="desktop-stage" id="home" aria-label="LjubeXXX Gaming homepage">
+    <img class="mockup" src="assets/mockup.webp" alt="LjubeXXX Gaming streaming homepage" />
+
+    <!-- social hotspots -->
+    <a class="hotspot social hs-twitch" data-social="twitch" aria-label="Open Twitch"></a>
+    <a class="hotspot social hs-youtube" data-social="youtube" aria-label="Open YouTube"></a>
+    <a class="hotspot social hs-tiktok" data-social="tiktok" aria-label="Open TikTok"></a>
+    <a class="hotspot social hs-kick" data-social="kick" aria-label="Open Kick"></a>
+    <a class="hotspot social hs-instagram" data-social="instagram" aria-label="Open Instagram"></a>
+    <button class="hotspot social hs-discord discord-soon" type="button" aria-label="Discord coming soon">
+      <span>COMING SOON</span>
+    </button>
+
+    <!-- navigation hotspots -->
+    <a class="hotspot nav-hot nav-home" href="#home" aria-label="Home"></a>
+    <a class="hotspot nav-hot nav-about" href="#mobile-about" aria-label="About me"></a>
+    <a class="hotspot nav-hot nav-schedule" href="#mobile-schedule" aria-label="Schedule"></a>
+    <a class="hotspot nav-hot nav-games" href="#mobile-games" aria-label="Games"></a>
+    <a class="hotspot nav-hot nav-setup" href="#mobile-playing" aria-label="Setup"></a>
+    <a class="hotspot nav-hot nav-contact" data-social="twitch" aria-label="Contact / Twitch"></a>
+
+    <!-- game carousel interaction zones -->
+    <button class="hotspot arrow-hot arrow-left" id="desktopPrev" type="button" aria-label="Previous game"></button>
+    <button class="hotspot arrow-hot arrow-right" id="desktopNext" type="button" aria-label="Next game"></button>
+
+    <div class="desktop-toast" id="desktopToast" role="status" aria-live="polite"></div>
+  </main>
+
+  <!-- MOBILE/TABLET: real responsive DOM version -->
+  <main class="mobile-site">
+    <header class="mobile-header">
+      <div class="m-brand"><strong>LJUBEXXX</strong><span>GAMING</span></div>
+      <p>STREAM • GAME • COMMUNITY</p>
+    </header>
+
+    <section class="m-socials" id="mobileSocials"></section>
+
+    <section class="m-hero" id="mobile-games">
+      <div class="m-games" id="mobileGames"></div>
+      <div class="m-core"><strong>LJUBEXXX</strong><span>GAMING</span></div>
+    </section>
+
+    <div class="m-live"><b>● LIVE NOW</b><span>COME JOIN THE STREAM!</span></div>
+
+    <section class="m-panels">
+      <article class="m-panel" id="mobile-about">
+        <h2>ABOUT ME</h2>
+        <p id="mobileAbout"></p>
+      </article>
+      <article class="m-panel" id="mobile-schedule">
+        <h2>STREAM SCHEDULE</h2>
+        <div id="mobileSchedule"></div>
+        <small>TIMES ARE (CET / BELGRADE)</small>
+      </article>
+      <article class="m-panel" id="mobile-playing">
+        <h2>CURRENTLY PLAYING</h2>
+        <strong id="mobileCurrent"></strong>
+        <p id="mobileGenres"></p>
+      </article>
+    </section>
+
+    <footer>© <span id="year"></span> LJUBEXXX GAMING. ALL RIGHTS RESERVED.</footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
