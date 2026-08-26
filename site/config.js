@@ -17,11 +17,12 @@ window.LJUBE_CONFIG = {
     discord: { label: 'Discord', eyebrow: 'JOIN MY', cta: 'COMING SOON', url: '', enabled: false, accent: '#7189ff', icon: '◉' }
   },
   schedule: [
-    { day: 'MONDAY', start: '20:00', end: '00:00' },
-    { day: 'WEDNESDAY', start: '20:00', end: '00:00' },
-    { day: 'FRIDAY', start: '20:00', end: '02:00' },
-    { day: 'SATURDAY', start: '18:00', end: '02:00' },
-    { day: 'SUNDAY', start: '18:00', end: '00:00' }
+    { day: 'MONDAY', start: '19:00', end: '22:00' },
+    { day: 'TUESDAY', start: '19:00', end: '22:00' },
+    { day: 'WEDNESDAY', start: '19:00', end: '22:00' },
+    { day: 'THURSDAY', start: '19:00', end: '22:00' },
+    { day: 'FRIDAY', start: '19:00', end: '22:00' },
+    { day: 'SATURDAY / SUNDAY', note: 'FREE BUT STAY TUNED' }
   ],
   games: [
     { title: 'FC 27', tag: 'FOOTBALL', image: 'assets/game-fc27.webp', position: 'center center' },
