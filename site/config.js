@@ -9,11 +9,11 @@ window.LJUBE_CONFIG = {
   setupTitle: 'PC SETUP SOON',
   setupText: "I’ll be adding my PC specs, peripherals, and everything else I use for streaming and gaming here very soon.",
   socials: {
-    twitch: { label: 'Twitch', eyebrow: 'FOLLOW ME ON', cta: 'WATCH LIVE', url: 'https://www.twitch.tv/ljubisa_vacli', enabled: true, accent: '#a970ff', icon: 'T' },
-    youtube: { label: 'YouTube', eyebrow: 'SUBSCRIBE ON', cta: 'SUBSCRIBE', url: 'https://www.youtube.com/@Ljubexxx', enabled: true, accent: '#ff2d45', icon: '▶' },
-    tiktok: { label: 'TikTok', eyebrow: 'FOLLOW ME ON', cta: 'FOLLOW', url: 'https://www.tiktok.com/@ljubexxxgamingstream', enabled: true, accent: '#ff4b72', icon: '♪' },
+    twitch: { label: 'Twitch', eyebrow: 'FOLLOW ME ON', cta: 'WATCH LIVE', url: 'https://www.twitch.tv/ljubexxxgamingtv', enabled: true, accent: '#a970ff', icon: 'T' },
+    youtube: { label: 'YouTube', eyebrow: 'SUBSCRIBE ON', cta: 'SUBSCRIBE', url: 'https://www.youtube.com/@LjubexxxGamingTV', enabled: true, accent: '#ff2d45', icon: '▶' },
+    tiktok: { label: 'TikTok', eyebrow: 'FOLLOW ME ON', cta: 'FOLLOW', url: 'https://www.tiktok.com/@ljubexxxgamingtv', enabled: true, accent: '#ff4b72', icon: '♪' },
     kick: { label: 'Kick', eyebrow: 'FOLLOW ME ON', cta: 'WATCH LIVE', url: 'https://kick.com/ljubisalivac', enabled: true, accent: '#52ff1a', icon: 'K' },
-    instagram: { label: 'Instagram', eyebrow: 'FOLLOW ME ON', cta: 'FOLLOW', url: 'https://www.instagram.com/ljubic1989/', enabled: true, accent: '#ff4aa0', icon: '◎' },
+    instagram: { label: 'Instagram', eyebrow: 'FOLLOW ME ON', cta: 'FOLLOW', url: 'https://www.instagram.com/', enabled: true, accent: '#ff4aa0', icon: '◎' },
     discord: { label: 'Discord', eyebrow: 'JOIN MY', cta: 'COMING SOON', url: '', enabled: false, accent: '#7189ff', icon: '◉' }
   },
   schedule: [
