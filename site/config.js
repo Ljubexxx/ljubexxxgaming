@@ -7,7 +7,7 @@ window.LJUBE_CONFIG = {
   socials: {
     twitch: {
       label: "Twitch",
-      url: "https://www.twitch.tv/ljubisa_vacli",
+      url: "https://www.twitch.tv/ljubexxxgamingtv",
       cta: "WATCH LIVE",
       eyebrow: "FOLLOW ME ON",
       enabled: true
@@ -21,7 +21,7 @@ window.LJUBE_CONFIG = {
     },
     tiktok: {
       label: "TikTok",
-      url: "https://www.tiktok.com/@ljubexxxgamingstream",
+      url: "https://www.tiktok.com/@ljubexxxgamingtv",
       cta: "FOLLOW",
       eyebrow: "FOLLOW ME ON",
       enabled: true
