@@ -2,8 +2,8 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:#000}body{margin:0;background:#000;color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 
 /* Desktop approved-design skin */
-.desktop-stage{position:relative;width:min(94vw,163.47vh);margin:0 auto;aspect-ratio:1672/941;background:#000;overflow:hidden;box-shadow:0 0 70px rgba(255,0,40,.12)}
-.mockup{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+.desktop-stage{position:relative;width:min(88vw,156.4vh,2300px);margin:0 auto;aspect-ratio:1672/941;background:#000;overflow:hidden;box-shadow:0 0 70px rgba(255,0,40,.12)}
+.mockup{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;image-rendering:auto}
 .hotspot{position:absolute;z-index:10;display:block;border:0;background:transparent;padding:0;cursor:pointer;text-decoration:none;border-radius:8px}
 .hotspot::after{content:"";position:absolute;inset:2%;border:1px solid transparent;border-radius:8px;transition:.18s ease;pointer-events:none}
 .hotspot:hover::after,.hotspot:focus-visible::after{border-color:rgba(255,255,255,.36);box-shadow:0 0 18px rgba(255,23,61,.55),inset 0 0 20px rgba(255,23,61,.12);background:rgba(255,255,255,.018)}
