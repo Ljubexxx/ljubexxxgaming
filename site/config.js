@@ -14,7 +14,7 @@ window.LJUBE_CONFIG = {
     },
     youtube: {
       label: "YouTube",
-      url: "https://www.youtube.com/@Ljubexxx",
+      url: "https://www.youtube.com/@Ljubexxx?sub_confirmation=1",
       cta: "SUBSCRIBE",
       eyebrow: "SUBSCRIBE ON",
       enabled: true
@@ -49,11 +49,13 @@ window.LJUBE_CONFIG = {
     }
   },
   schedule: [
-    { day: "MONDAY", dayIndex: 1, start: "20:00", end: "00:00" },
-    { day: "WEDNESDAY", dayIndex: 3, start: "20:00", end: "00:00" },
-    { day: "FRIDAY", dayIndex: 5, start: "20:00", end: "02:00" },
-    { day: "SATURDAY", dayIndex: 6, start: "18:00", end: "02:00" },
-    { day: "SUNDAY", dayIndex: 0, start: "18:00", end: "00:00" }
+    { day: "MONDAY", dayIndex: 1, start: "19:00", end: "22:00" },
+    { day: "TUESDAY", dayIndex: 2, start: "19:00", end: "22:00" },
+    { day: "WEDNESDAY", dayIndex: 3, start: "19:00", end: "22:00" },
+    { day: "THURSDAY", dayIndex: 4, start: "19:00", end: "22:00" },
+    { day: "FRIDAY", dayIndex: 5, start: "19:00", end: "22:00" },
+    { day: "SATURDAY", dayIndex: 6, start: "FREE", end: "STAY TUNED" },
+    { day: "SUNDAY", dayIndex: 0, start: "FREE", end: "STAY TUNED" }
   ],
   timezone: "Europe/Belgrade",
   games: [

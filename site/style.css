@@ -2,7 +2,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth;background:#000}body{margin:0;background:#000;color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 
 /* Desktop approved-design skin */
-.desktop-stage{position:relative;width:min(100vw,177.68vh);margin:0 auto;aspect-ratio:1672/941;background:#000;overflow:hidden;box-shadow:0 0 70px rgba(255,0,40,.12)}
+.desktop-stage{position:relative;width:min(94vw,163.47vh);margin:0 auto;aspect-ratio:1672/941;background:#000;overflow:hidden;box-shadow:0 0 70px rgba(255,0,40,.12)}
 .mockup{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
 .hotspot{position:absolute;z-index:10;display:block;border:0;background:transparent;padding:0;cursor:pointer;text-decoration:none;border-radius:8px}
 .hotspot::after{content:"";position:absolute;inset:2%;border:1px solid transparent;border-radius:8px;transition:.18s ease;pointer-events:none}
@@ -17,9 +17,9 @@
 .hs-instagram{left:80.7%;top:30.3%;width:17.3%;height:16.7%}
 .hs-facebook{left:80.7%;top:48.1%;width:17.3%;height:16.9%}
 
-/* Navigation links */
-.nav-hot{top:21.7%;height:5.3%}
-.nav-home{left:25.2%;width:6.2%}.nav-about{left:32.0%;width:8.2%}.nav-schedule{left:40.7%;width:8.3%}.nav-games{left:49.4%;width:6.5%}.nav-setup{left:56.3%;width:6.7%}.nav-contact{left:63.4%;width:8.2%}
+/* Navigation links: only HOME and SETUP */
+.nav-hot{top:20.7%;height:4.4%}
+.nav-home{left:41.2%;width:7.0%}.nav-setup{left:51.4%;width:7.2%}
 
 /* Carousel arrows */
 .arrow-left{left:18.7%;top:39.0%;width:2.5%;height:8.0%}.arrow-right{left:77.8%;top:39.0%;width:2.5%;height:8.0%}
