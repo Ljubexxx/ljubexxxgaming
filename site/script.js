@@ -1,73 +1,43 @@
 (() => {
   const cfg = window.LJUBE_CONFIG;
-  const socialOrderLeft = ['twitch', 'youtube', 'tiktok'];
-  const socialOrderRight = ['kick', 'instagram', 'discord'];
-  const makeSocialCard = (key) => {
+  const socialColors = {twitch:'#a970ff',youtube:'#ff2d45',tiktok:'#ff4b72',kick:'#53fc18',instagram:'#ff4aa0',facebook:'#1877f2'};
+
+  // Desktop links remain visually identical to approved mockup but are real clickable anchors.
+  document.querySelectorAll('[data-social]').forEach(el => {
+    const key = el.dataset.social;
     const s = cfg.socials[key];
-    const tag = s.enabled && s.url ? 'a' : 'div';
-    const href = s.enabled && s.url ? `href="${s.url}" target="_blank" rel="noopener noreferrer"` : '';
-    return `
-      <${tag} class="social-card panel ${s.enabled && s.url ? '' : 'disabled'}" style="--accent:${s.accent}" ${href}>
-        <div class="social-top">
-          <div class="social-icon">${s.icon}</div>
-          <div>
-            <div class="eyebrow-small">${s.eyebrow}</div>
-            <div class="social-name">${s.label.toUpperCase()}</div>
-          </div>
-        </div>
-        <div class="social-cta">${s.cta}</div>
-      </${tag}>`;
+    if (!s || !s.enabled || !s.url) return;
+    el.href = s.url;
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+  });
+
+  const toast = document.getElementById('desktopToast');
+  let toastTimer;
+  const showToast = (text) => {
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
   };
+  document.getElementById('desktopPrev')?.addEventListener('click', () => showToast('Game carousel controls are ready — visual rotation comes next.'));
+  document.getElementById('desktopNext')?.addEventListener('click', () => showToast('Game carousel controls are ready — visual rotation comes next.'));
 
-  const sponsorSlot = () => `
-    <article class="sponsor-slot panel">
-      <div class="sponsor-kicker">PARTNER SPACE</div>
-      <div class="sponsor-title">FUTURE SPONSOR</div>
-      <div class="sponsor-note">For brands that believe in this story.</div>
-    </article>`;
-
-  document.getElementById('leftSocials').innerHTML = socialOrderLeft.map(makeSocialCard).join('') + sponsorSlot();
-  document.getElementById('rightSocials').innerHTML = socialOrderRight.map(makeSocialCard).join('') + sponsorSlot();
-
-  document.getElementById('desktopGames').innerHTML = cfg.games.map(game => `
-    <article class="game-card" style="--img-pos:${game.position}">
-      <img src="${game.image}" alt="${game.title}">
-      <div class="game-caption">
-        <span class="game-tag">${game.tag}</span>
-        <h3 class="game-title">${game.title}</h3>
-      </div>
-    </article>
-  `).join('');
-
-  document.getElementById('aboutText').textContent = cfg.about;
-  document.getElementById('playingTitle').textContent = cfg.setupTitle;
-  document.getElementById('playingGenres').textContent = cfg.setupText;
-  document.getElementById('scheduleList').innerHTML = cfg.schedule.map(row => {
-    if (row.note) {
-      return `
-    <div class="schedule-row schedule-row-note"><strong>${row.day}</strong><span class="schedule-note">${row.note}</span></div>
-  `;
-    }
-    return `
-    <div class="schedule-row"><strong>${row.day}</strong><time>${row.start} - ${row.end}</time></div>
-  `;
+  // Functional responsive/mobile view.
+  const order = ['twitch','youtube','tiktok','kick','instagram','facebook'];
+  const mobileSocials = document.getElementById('mobileSocials');
+  mobileSocials.innerHTML = order.map(key => {
+    const s = cfg.socials[key];
+    const action = s.enabled && s.url
+      ? `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.cta}</a>`
+      : `<button type="button" disabled>${s.cta}</button>`;
+    return `<article class="m-social" style="--accent:${socialColors[key]}"><small>${s.eyebrow}</small><h3>${s.label.toUpperCase()}</h3>${action}</article>`;
   }).join('');
-  document.getElementById('liveTagline').textContent = cfg.brand.tagline;
+
+  document.getElementById('mobileGames').innerHTML = cfg.games.map(g => `<article class="m-game"><img src="${g.image}" alt="${g.title}"><span>${g.title}</span></article>`).join('');
+  document.getElementById('mobileAbout').textContent = cfg.about;
+  document.getElementById('mobileCurrent').textContent = cfg.currentlyPlaying;
+  document.getElementById('mobileGenres').textContent = cfg.genres;
+  document.getElementById('mobileSchedule').innerHTML = cfg.schedule.map(s => `<div class="m-schedule-row"><strong>${s.day}</strong><span>${s.start} - ${s.end}</span></div>`).join('');
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  const gamesGrid = document.getElementById('desktopGames');
-  const scrollAmount = 220;
-  document.getElementById('desktopPrev')?.addEventListener('click', () => {
-    gamesGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-  document.getElementById('desktopNext')?.addEventListener('click', () => {
-    gamesGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
-
-  document.querySelectorAll('.main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelectorAll('.main-nav a').forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-    });
-  });
 })();
