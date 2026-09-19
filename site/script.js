@@ -14,7 +14,7 @@
   byId('genresText').textContent = cfg.genres;
   byId('year').textContent = new Date().getFullYear();
 
-  const primarySocial = cfg.socials[0];
+  const primarySocial = cfg.socials.find((social) => social.key === 'kick') || cfg.socials[0];
   const primaryBtn = byId('primarySocialBtn');
   primaryBtn.href = primarySocial.url;
   primaryBtn.target = '_blank';
