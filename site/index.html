@@ -2,71 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#030303" />
-  <meta name="description" content="LjubeXXX Gaming — streaming hub, schedule, games and social links." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="LjubeXXX Gaming — official streaming hub with social links, schedule, current games and setup." />
   <title>LjubeXXX Gaming</title>
+  <link rel="preload" href="assets/logo-main.webp" as="image" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- DESKTOP: pixel-faithful skin based on the approved mockup -->
-  <main class="desktop-stage" id="home" aria-label="LjubeXXX Gaming homepage">
-    <img class="mockup" src="assets/mockup.webp" alt="LjubeXXX Gaming streaming homepage" />
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand-lockup" href="#home" aria-label="LjubeXXX Gaming home">
+        <span class="brand-mark">LJ</span>
+        <span class="brand-text">
+          <strong>LJUBEXXX</strong>
+          <span>GAMING</span>
+        </span>
+      </a>
 
-    <!-- social hotspots -->
-    <a class="hotspot social hs-twitch" data-social="twitch" aria-label="Open Twitch"></a>
-    <a class="hotspot social hs-youtube" data-social="youtube" aria-label="Open YouTube"></a>
-    <a class="hotspot social hs-tiktok" data-social="tiktok" aria-label="Open TikTok"></a>
-    <a class="hotspot social hs-kick" data-social="kick" aria-label="Open Kick"></a>
-    <a class="hotspot social hs-instagram" data-social="instagram" aria-label="Open Instagram"></a>
-    <a class="hotspot social hs-facebook" data-social="facebook" aria-label="Open Facebook"></a>
-
-    <!-- navigation hotspots: only HOME and SETUP -->
-    <a class="hotspot nav-hot nav-home" href="#home" aria-label="Home"></a>
-    <a class="hotspot nav-hot nav-setup" href="#mobile-playing" aria-label="Setup"></a>
-
-    <!-- game carousel interaction zones -->
-    <button class="hotspot arrow-hot arrow-left" id="desktopPrev" type="button" aria-label="Previous game"></button>
-    <button class="hotspot arrow-hot arrow-right" id="desktopNext" type="button" aria-label="Next game"></button>
-
-    <div class="desktop-toast" id="desktopToast" role="status" aria-live="polite"></div>
-  </main>
-
-  <!-- MOBILE/TABLET: real responsive DOM version -->
-  <main class="mobile-site">
-    <header class="mobile-header">
-      <div class="m-brand"><strong>LJUBEXXX</strong><span>GAMING</span></div>
-      <p>STREAM • GAME • COMMUNITY</p>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#setup">Setup</a>
+      </nav>
     </header>
 
-    <section class="m-socials" id="mobileSocials"></section>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">OFFICIAL STREAMING HUB</p>
+          <h1>
+            <span>LJUBEXXX</span>
+            <strong>GAMING</strong>
+          </h1>
+          <p class="hero-text" id="aboutText"></p>
 
-    <section class="m-hero" id="mobile-games">
-      <div class="m-games" id="mobileGames"></div>
-      <div class="m-core"><strong>LJUBEXXX</strong><span>GAMING</span></div>
-    </section>
+          <div class="hero-status">
+            <span class="live-dot" aria-hidden="true"></span>
+            <div>
+              <strong id="liveHeadline"></strong>
+              <small id="heroTagline"></small>
+            </div>
+          </div>
 
-    <div class="m-live"><b>● LIVE NOW</b><span>COME JOIN THE STREAM!</span></div>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="primarySocialBtn" href="#socials">FOLLOW NOW</a>
+            <a class="btn btn-secondary" href="#schedule">VIEW SCHEDULE</a>
+          </div>
+        </div>
 
-    <section class="m-panels">
-      <article class="m-panel" id="mobile-about">
-        <h2>ABOUT ME</h2>
-        <p id="mobileAbout"></p>
-      </article>
-      <article class="m-panel" id="mobile-schedule">
-        <h2>STREAM SCHEDULE</h2>
-        <div id="mobileSchedule"></div>
-        <small>TIMES ARE (CET / BELGRADE)</small>
-      </article>
-      <article class="m-panel" id="mobile-playing">
-        <h2>CURRENTLY PLAYING</h2>
-        <strong id="mobileCurrent"></strong>
-        <p id="mobileGenres"></p>
-      </article>
-    </section>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="logo-orbit">
+            <div class="orbit-ring orbit-ring-a"></div>
+            <div class="orbit-ring orbit-ring-b"></div>
+            <div class="logo-frame">
+              <img src="assets/logo-main.webp" alt="LjubeXXX Gaming logo" class="hero-logo" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <footer>© <span id="year"></span> LJUBEXXX GAMING. ALL RIGHTS RESERVED.</footer>
-  </main>
+      <section class="social-section" id="socials">
+        <div class="section-head">
+          <p class="eyebrow">FOLLOW / SUBSCRIBE</p>
+          <h2>Official social links</h2>
+        </div>
+        <div class="social-grid" id="socialGrid"></div>
+      </section>
+
+      <section class="games-section" id="games">
+        <div class="section-head">
+          <p class="eyebrow">CURRENT ROTATION</p>
+          <h2>Featured games</h2>
+        </div>
+        <div class="games-grid" id="gamesGrid"></div>
+      </section>
+
+      <section class="info-grid">
+        <article class="panel schedule-panel" id="schedule">
+          <div class="section-head compact">
+            <p class="eyebrow">STREAM TIMES</p>
+            <h2>Schedule</h2>
+          </div>
+          <div class="schedule-list" id="scheduleList"></div>
+          <p class="panel-note">All times are shown in CET / Belgrade.</p>
+        </article>
+
+        <article class="panel now-playing-panel">
+          <div class="section-head compact">
+            <p class="eyebrow">ON STREAM</p>
+            <h2>Currently playing</h2>
+          </div>
+          <strong class="current-game" id="currentGame"></strong>
+          <p class="genres" id="genresText"></p>
+          <div class="mini-stats">
+            <div>
+              <span>Platforms</span>
+              <strong>YouTube • Twitch • Kick</strong>
+            </div>
+            <div>
+              <span>Content</span>
+              <strong>Live streams, Shorts, clips</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="setup-section" id="setup">
+        <div class="section-head">
+          <p class="eyebrow">GEAR</p>
+          <h2>Streaming setup</h2>
+        </div>
+        <div class="setup-grid" id="setupGrid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> LjubeXXX Gaming. All rights reserved.</p>
+      <p>Built for fast loading, clean mobile view, and direct access to every platform.</p>
+    </footer>
+  </div>
 
   <script src="config.js"></script>
   <script src="script.js"></script>

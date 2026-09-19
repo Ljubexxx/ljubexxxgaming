@@ -1,43 +1,56 @@
 (() => {
   const cfg = window.LJUBE_CONFIG;
-  const socialColors = {twitch:'#a970ff',youtube:'#ff2d45',tiktok:'#ff4b72',kick:'#53fc18',instagram:'#ff4aa0',facebook:'#1877f2'};
 
-  // Desktop links remain visually identical to approved mockup but are real clickable anchors.
-  document.querySelectorAll('[data-social]').forEach(el => {
-    const key = el.dataset.social;
-    const s = cfg.socials[key];
-    if (!s || !s.enabled || !s.url) return;
-    el.href = s.url;
-    el.target = '_blank';
-    el.rel = 'noopener noreferrer';
-  });
+  const byId = (id) => document.getElementById(id);
+  const socialGrid = byId('socialGrid');
+  const gamesGrid = byId('gamesGrid');
+  const scheduleList = byId('scheduleList');
+  const setupGrid = byId('setupGrid');
 
-  const toast = document.getElementById('desktopToast');
-  let toastTimer;
-  const showToast = (text) => {
-    toast.textContent = text;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
-  };
-  document.getElementById('desktopPrev')?.addEventListener('click', () => showToast('Game carousel controls are ready — visual rotation comes next.'));
-  document.getElementById('desktopNext')?.addEventListener('click', () => showToast('Game carousel controls are ready — visual rotation comes next.'));
+  byId('aboutText').textContent = cfg.about;
+  byId('liveHeadline').textContent = 'LIVE NOW';
+  byId('heroTagline').textContent = cfg.brand.tagline;
+  byId('currentGame').textContent = cfg.currentlyPlaying;
+  byId('genresText').textContent = cfg.genres;
+  byId('year').textContent = new Date().getFullYear();
 
-  // Functional responsive/mobile view.
-  const order = ['twitch','youtube','tiktok','kick','instagram','facebook'];
-  const mobileSocials = document.getElementById('mobileSocials');
-  mobileSocials.innerHTML = order.map(key => {
-    const s = cfg.socials[key];
-    const action = s.enabled && s.url
-      ? `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.cta}</a>`
-      : `<button type="button" disabled>${s.cta}</button>`;
-    return `<article class="m-social" style="--accent:${socialColors[key]}"><small>${s.eyebrow}</small><h3>${s.label.toUpperCase()}</h3>${action}</article>`;
-  }).join('');
+  const primarySocial = cfg.socials[0];
+  const primaryBtn = byId('primarySocialBtn');
+  primaryBtn.href = primarySocial.url;
+  primaryBtn.target = '_blank';
+  primaryBtn.rel = 'noopener noreferrer';
+  primaryBtn.textContent = `${primarySocial.cta} ON ${primarySocial.label.toUpperCase()}`;
 
-  document.getElementById('mobileGames').innerHTML = cfg.games.map(g => `<article class="m-game"><img src="${g.image}" alt="${g.title}"><span>${g.title}</span></article>`).join('');
-  document.getElementById('mobileAbout').textContent = cfg.about;
-  document.getElementById('mobileCurrent').textContent = cfg.currentlyPlaying;
-  document.getElementById('mobileGenres').textContent = cfg.genres;
-  document.getElementById('mobileSchedule').innerHTML = cfg.schedule.map(s => `<div class="m-schedule-row"><strong>${s.day}</strong><span>${s.start} - ${s.end}</span></div>`).join('');
-  document.getElementById('year').textContent = new Date().getFullYear();
+  socialGrid.innerHTML = cfg.socials.map((social) => `
+    <article class="social-card" style="--accent:${social.accent}">
+      <span class="social-eyebrow">${social.eyebrow}</span>
+      <h3>${social.label}</h3>
+      <a href="${social.url}" target="_blank" rel="noopener noreferrer">${social.cta}</a>
+    </article>
+  `).join('');
+
+  gamesGrid.innerHTML = cfg.games.map((game) => `
+    <article class="game-card">
+      <img src="${game.image}" alt="${game.title}" loading="lazy" />
+      <div class="game-overlay"></div>
+      <div class="game-copy">
+        <span>${game.tag}</span>
+        <h3>${game.title}</h3>
+      </div>
+    </article>
+  `).join('');
+
+  scheduleList.innerHTML = cfg.schedule.map((slot) => `
+    <div class="schedule-row">
+      <strong>${slot.day}</strong>
+      <span>${slot.start} — ${slot.end}</span>
+    </div>
+  `).join('');
+
+  setupGrid.innerHTML = cfg.setup.map((item) => `
+    <article class="setup-card">
+      <span>${item.label}</span>
+      <strong>${item.value}</strong>
+    </article>
+  `).join('');
 })();
