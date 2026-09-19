@@ -562,3 +562,52 @@ section{
   .cta-row .btn{width:100%}
   .section-head h2{font-size:1.8rem}
 }
+
+/* Automatic LIVE badges: additive only; existing card layout remains unchanged. */
+.social-card{position:relative}
+.platform-live-badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 8px;
+  border:1px solid color-mix(in srgb,var(--accent) 65%,#fff 8%);
+  border-radius:999px;
+  background:color-mix(in srgb,var(--accent) 15%,#09090c 85%);
+  color:#fff;
+  font-size:.66rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  line-height:1;
+  box-shadow:0 0 18px color-mix(in srgb,var(--accent) 28%,transparent);
+}
+.platform-live-badge[hidden]{display:none!important}
+.platform-live-badge i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 75%,transparent);
+  animation:platformLivePulse 1.6s infinite;
+}
+.social-card.is-live{
+  border-color:color-mix(in srgb,var(--accent) 52%,rgba(255,255,255,.09));
+  box-shadow:var(--shadow),0 0 28px color-mix(in srgb,var(--accent) 16%,transparent);
+}
+.social-card.is-live>a{
+  box-shadow:0 0 20px color-mix(in srgb,var(--accent) 18%,transparent);
+}
+@keyframes platformLivePulse{
+  0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 75%,transparent)}
+  70%{box-shadow:0 0 0 7px transparent}
+  100%{box-shadow:0 0 0 0 transparent}
+}
+@media (prefers-reduced-motion:reduce){
+  .platform-live-badge i{animation:none}
+}
+@media (max-width:360px){
+  .platform-live-badge{font-size:.61rem;top:12px;right:12px}
+}
