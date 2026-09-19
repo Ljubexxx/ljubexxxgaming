@@ -216,6 +216,17 @@ img{max-width:100%;display:block}
 .btn-secondary{
   background:rgba(255,255,255,.04);
 }
+.btn-paypal{
+  color:#111;
+  background:linear-gradient(180deg,#ffd76a,#ffc439);
+  border-color:rgba(255,196,57,.9);
+  box-shadow:0 18px 38px rgba(255,196,57,.24),0 0 0 1px rgba(255,255,255,.08) inset;
+}
+.btn-paypal:hover,
+.btn-paypal:focus-visible{
+  background:linear-gradient(180deg,#ffe18a,#ffcf58);
+  box-shadow:0 20px 42px rgba(255,196,57,.34),0 0 22px rgba(255,196,57,.16);
+}
 
 .hero-visual{
   display:grid;
