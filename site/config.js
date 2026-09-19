@@ -28,7 +28,7 @@ window.LJUBE_CONFIG = {
     },
     kick: {
       label: "Kick",
-      url: "https://kick.com/ljubisalivac",
+      url: "https://kick.com/LjubexxxGamingTV",
       cta: "WATCH LIVE",
       eyebrow: "FOLLOW ME ON",
       enabled: true
